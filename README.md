@@ -8,7 +8,13 @@ A robot has to move from an initial position of [0,0] to a goal at [90, 50]. The
 - The robot takes the lowest cost action at each step without backtracking.
 - The cost is a weighted sum of the control action and the distance to goal.
 - The lowest recorded cost is 203.5685 [4dp] where the gains used are 4.5 and 1.0 for the distance to goal cost and control action cost respectively.
-- An improvement that can be made is to allow the search to backtrack to the previous taken step when no optimal solution is found. 
+- An improvement that can be made is to allow the search to backtrack to the previous taken step when no optimal solution is found.
+
+# The Code
+1. from current position, search adjacent boxes and assign costs.
+2. Arrange all possibilities in a search list by ascending cost.
+3. Iterate, if the possible position is not in path history, select the possible position as current position.
+4. If current position == goal, break
 
 # Resources
 https://www.dtcareers.gov.sg/challenge/?utm_source=email&utm_medium=EDM&utm_campaign=ChallengeOfWits2023&utm_content=Challenge3-University
