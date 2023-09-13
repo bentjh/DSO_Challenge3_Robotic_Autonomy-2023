@@ -4,10 +4,10 @@ import math
 
 class goal_finder():
     # coord = [x, y, z, g(n), h(n), f(n)]
-    def __init__(s, gain): 
+    def __init__(s, dist2goal_gain): 
         s.map = pd.read_csv("Elevation.csv", index_col=0)
         s.goal = [90, 50, s.find_elevation(90, 50)]
-        s.dist2goal_gain = gain
+        s.dist2goal_gain = dist2goal_gain
         s.control_cost_gain = 1.0
         s.start = [0, 0, s.find_elevation(0, 0), 
                    0, s.calc_dist2goal([0, 0, s.find_elevation(0,0)]), 
@@ -101,3 +101,10 @@ class goal_finder():
                 print("SUCCESS")
                 print(best_state)
                 break
+            
+def main():
+    terrain_transverser = goal_finder(4.6)
+    terrain_transverser.run()
+
+if __name__ == "__main__":
+    main()
