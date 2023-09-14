@@ -10,17 +10,17 @@ Binary Trees can be represented as an array [A, B, C, D, E, F, G]
 https://www.geeksforgeeks.org/complete-binary-tree/
 """
 
-class BinaryTreeNode():
+class BinaryTree():
     def __init__(self, value = None):
         self.value = value
         self.left = None
         self.right = None
 
     def set_left(self, left):
-        self.left = BinaryTreeNode(left)
+        self.left = BinaryTree(left)
 
     def set_right(self, right):
-        self.right = BinaryTreeNode(right)
+        self.right = BinaryTree(right)
 
     def get_value(self):
         return self.value
@@ -35,7 +35,7 @@ class BinaryTreeNode():
             return self.right.value
         return None
 
-class BinaryTree():
-    def __init__(self, h):
-        self.height = h
-        self.number_of_nodes = 2**(self.height+1)
+# class BinaryTree():
+#     def __init__(self, h):
+#         self.height = h
+#         self.number_of_nodes = 2**(self.height+1)
