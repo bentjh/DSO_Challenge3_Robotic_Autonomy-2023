@@ -8,35 +8,39 @@ class Queue():
 
     def enqueue(self, value):
         # insertion of data
-        pass
-
-    def dequeue(self, index = 0):
+        if self.is_full():
+            return "Error. Queue is Full"
+        self.buffer.append(value)
+        print(f"Success. {self.rear()} added to queue")
+            
+    def dequeue(self):
         # removal of data from queue
-        pass
+        if self.is_null():
+            return "Error. Queue is Empty"
+        print(f"Success. {self.buffer.pop(0)} removed from queue")
 
     def front(self):
+        if self.is_null():
+            return "Error. Queue is Empty"
         return self.buffer[0]
     
     def rear(self):
+        if self.is_null():
+            return "Error. Queue is Empty"
         return self.buffer[-1]
     
     def is_full(self):
-        if len(self.buffer) == self.capacity:
-            return True
-        return False
+        return len(self.buffer) == self.capacity
     
     def is_null(self):
-        if len(self.buffer) == 0:
-            return True
-        return False
+        return len(self.buffer) == 0
     
-class PriorityQueue():
+class PriorityQueue(Queue):
     """
     https://www.geeksforgeeks.org/priority-queue-set-1-introduction/
     """
     def __init__(self, capacity):
-        self.buffer = []
-        self.capacity = capacity
+        super().__init__(capacity)
 
     def insert_queue(self, value):
         pass
