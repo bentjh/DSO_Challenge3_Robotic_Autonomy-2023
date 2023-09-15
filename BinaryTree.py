@@ -15,6 +15,7 @@ class BinaryTree():
         self.value = value
         self.left = None
         self.right = None
+        self.list_form = [value]
 
     def set_left(self, left):
         self.left = BinaryTree(left)
@@ -34,8 +35,3 @@ class BinaryTree():
         if self.right != None:
             return self.right.value
         return None
-
-# class BinaryTree():
-#     def __init__(self, h):
-#         self.height = h
-#         self.number_of_nodes = 2**(self.height+1)
