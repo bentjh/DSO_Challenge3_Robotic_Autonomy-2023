@@ -34,17 +34,3 @@ class Queue():
     
     def is_null(self):
         return len(self.buffer) == 0
-    
-    
-from BinaryTree import BinaryTree
-class PriorityQueue(Queue, BinaryTree):
-    """
-    https://www.geeksforgeeks.org/priority-queue-set-1-introduction/
-    """
-    def __init__(self, capacity):
-        self.Queue = Queue(capacity)
-        self.BinaryTree = BinaryTree()
-
-    def insert_queue(self, value):
-        pass
-
